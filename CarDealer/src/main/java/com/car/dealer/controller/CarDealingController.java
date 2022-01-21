@@ -39,11 +39,11 @@ public class CarDealingController {
 	
 	@ResponseStatus(HttpStatus.CREATED)
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "CREATED - The car added to the list successfuly"),
-            @ApiResponse(code = 400, message = "BAD_REQUEST - As invalid request was sent to the service"),
+            @ApiResponse(code = 201, message = "CREATED - The car was added to the list successfuly"),
+            @ApiResponse(code = 400, message = "BAD_REQUEST - An invalid request was sent to the service"),
             @ApiResponse(code = 500, message = "SERVER_ERROR - Internal Server Error")
     })
-	@RequestMapping(value = "/car", method = RequestMethod.PUT)
+	@RequestMapping(value = "/car", method = RequestMethod.POST)
 	public void addCar(@RequestBody CarDTO carDTO ) {
 		carRepository.addCar(carDTO);
 	}
